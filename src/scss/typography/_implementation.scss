@@ -1,0 +1,25 @@
+@use './font-faces' as *;
+.Arkiv-Bold-font {
+  font-family: 'Arkiv Bold', sans-serif;
+  line-height: 1.3;
+}
+// Stylistic Alternates: alternative styling of some letters (no ligatures included in this)
+.salt {
+  font-feature-settings: "salt" on;
+  //font-variant-alternates: stylistic(salt);
+}
+// Diagonal fractions: numerator and denominator are made smaller and separated by a slash.
+.frac {
+  font-variant-numeric: diagonal-fractions; // | stacked-fractions
+}
+.slashed-zero {
+  font-variant-numeric: slashed-zero;
+}
+// Ordinals
+.ordn {
+  font-variant-numeric: ordinal;
+}
+// Superscript
+.super {
+  font-variant-position: super;
+}

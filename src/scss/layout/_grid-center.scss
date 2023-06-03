@@ -1,0 +1,19 @@
+// !IMPORTANT: parent element must have desired height declared, the grid will take all the space available, 
+// but  $min-child-height will decide the height of tracks.rows when scrolling, 
+// for snapping items (grid direct children) to take the entire scrolling area available, 
+// set $min-child-height to 100%.
+// the height of grid child to be centered may need to be specified in lvh or % if relative to the viewport. 
+// `lvh` unit may have quirks, so please be careful, test and do your research. (`lvh` -> large viewport height)
+@mixin centering-parent-grid($min-child-height) {
+  display: grid;
+  // horizontal placement (if there is free space around the element, it will be distributed around)
+  justify-content: center;
+  // vertical placement: implicit value of align-content is start.
+  align-content: space-between;
+  // no alignment specified, by default it stretches the entire height, as specified in `grid-auto-rows` property.
+  grid-auto-rows: minmax($min-child-height, max-content);
+  & > * {
+  display: grid;
+  place-content: center;
+  }
+}

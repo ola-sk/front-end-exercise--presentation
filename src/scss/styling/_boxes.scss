@@ -1,0 +1,5 @@
+@mixin box($color, $border-radius, $backdrop-blur: 6px) {
+  background-color: $color;
+  border-radius: $border-radius;
+  backdrop-filter: blur($backdrop-blur);
+}

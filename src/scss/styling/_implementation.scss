@@ -1,0 +1,19 @@
+@use './boxes' as *;
+@use './shadows' as *;
+:root {
+  --violet-shadow-1: 0 0 9em rgba(75, 37, 121, 0.919), 0 0 5em rgba(92, 52, 141, 0.702), 0.18em 0.18em 0.3em rgba(0, 0, 0, 0.862), 0 0 0.5em rgba(78, 40, 124, 0.553), 0 0 0.35em rgb(40, 15, 71);
+}
+body {
+  color: rgb(255, 255, 255);
+  text-shadow: var(--violet-shadow-1);
+}
+.glass-box-1 {
+  padding: 3em;
+  --bg-color-main-001: rgba(197, 212, 244, 0.174);
+  --box-border-radius: 1.2em;
+  @include box(var(--bg-color-main-001), var(--box-border-radius), 8px);
+  --box-shadow-color: rgba(6, 4, 21, 0.748);
+  --box-shadow-size: 0.5em;
+  --box-shadow-blur: 0.8em;
+  @include shadow-box(var(--box-shadow-size), var(--box-shadow-blur), var(--box-shadow-color));
+}

@@ -1,0 +1,27 @@
+@charset 'utf-8';
+
+@use './CSS-reset' as *;
+@use './layout';
+@use './typography';
+@use './styling';
+@use './graphics';
+html {
+  // the following `height: 100%` is necessary for the scroll snapping on the body to work.
+  // with `overflow: hidden` we avoid second scrollbar on the html element (since body has it)
+  height: 100%;
+  overflow: hidden;
+}
+body {
+  height: 100%;
+}
+h1 {
+  min-width: min-content;
+  max-width: 80svw;
+  text-align: center;
+}
+#h1-1 {
+  font-size: 14rem;
+}
+#h1-2 {
+  font-size: 8rem;
+}

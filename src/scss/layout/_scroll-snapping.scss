@@ -1,0 +1,29 @@
+@mixin vertical-scroll-container($height) {
+  // Define scroll area:
+  height: $height;
+  // `overflow: scroll` is required for scroll snapping, but auto works as well.
+  // `overflow: auto` enables the scroll when there is an overflowing content.
+  // `overflow` includes setting both `overflow-y` and `overflow-x`.
+  overflow: auto;
+  scroll-snap-type: y mandatory;
+}
+
+//$snap-to values: start | center | end;
+//$snap-stop: normal | always;
+@mixin snap-element-vertic($snap-to, $snap-stop: normal) {
+  // scroll-snap-align: y-axis x-axis;
+  scroll-snap-align: $snap-to none;
+  // Using the scroll-snap-stop property, you can ensure that a child 
+  // is snapped to during scrolling and not passed over.
+  // values: normal | always;
+  scroll-snap-stop: $snap-stop;
+}
+
+//$snap-to values: start | center | end;
+//$snap-stop: normal | always;
+@mixin vertical-scroll-snap-to-direct-children($height, $snap-to, $snap-stop: normal) {
+  @include vertical-scroll-container($height);
+  & > * {
+    @include snap-element-vertic($snap-to, $snap-stop)
+  }
+}

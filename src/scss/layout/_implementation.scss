@@ -1,0 +1,7 @@
+@use './grid-center' as *;
+@use './scroll-snapping' as *;
+
+.scroll-container {
+  @include centering-parent-grid(100%);
+  @include vertical-scroll-snap-to-direct-children(100%, start);
+}
